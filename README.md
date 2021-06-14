@@ -1,3 +1,23 @@
+# TO DO:
+## Preparation: 14/06 - morning
+- [x] Read up on MVC project structure
+- [x] Clone MVC boilerplate
+- [x] Connect to local server  
+- [x] Make GitHub repo
+
+## Project steps 1: timing 14/06 - afternoon
+- [x] Make database
+- [x] Import data
+- [x] Make the different classes
+- [ ] Show data on screen
+- [ ] Show data in dropdown list
+
+## Project steps 2
+- [ ] Logic
+- [ ] Calculator
+
+
+
 # Title: PHP Price Calculator challenge
 
 - Repository: `php-pricecalculator-challenge`
