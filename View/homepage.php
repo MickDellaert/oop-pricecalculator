@@ -3,9 +3,19 @@
 Anything complex should be calculated in the model -->
 <section>
 
-<?php foreach ($products AS $product) {
-    echo $product->getName();
-};?>
+<form action="" method="post">
+  <label for="Products">Choose a Product:</label>
+  
+  <select>
+    <?php foreach ($products AS $product) {
+        $name = $product->getName();
+        $id = $product->getId();
+        echo "<option value='{$id}'> {$name} </option>";
+    };
+    ?>
+  </select>
+
+
 
 <!--    --><?php //echo $product->getID() ?>
 <!--    --><?php //echo $product->getPrice() ?>
