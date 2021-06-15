@@ -6,7 +6,7 @@ Anything complex should be calculated in the model -->
 <form action="" method="post">
   <label for="Customers">Choose a Customer</label>
   
-  <select>
+  <select name="customerSelect">
     <?php foreach ($customers AS $customer) {
         $firstname = $customer->getFirstname();
         $lastname = $customer->getLastname();
@@ -16,10 +16,9 @@ Anything complex should be calculated in the model -->
     ?>
   </select>
 
-<form action="" method="post">
   <label for="Products">Choose a Product:</label>
   
-  <select>
+  <select name="productSelect">
     <?php foreach ($products AS $product) {
         $name = $product->getName();
         $id = $product->getId();
@@ -28,10 +27,7 @@ Anything complex should be calculated in the model -->
     ?>
   </select>
 
-
-
-<!--    --><?php //echo $product->getID() ?>
-<!--    --><?php //echo $product->getPrice() ?>
+  </form>
 
     <p><a href="index.php?page=info">To info page</a></p>
 
