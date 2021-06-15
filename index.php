@@ -8,6 +8,7 @@ require 'Model/Dbconnection.php';
 require 'Model/ProductLoader.php';
 
 
+
 //include all your controllers here
 require 'Controller/HomepageController.php';
 require 'Controller/InfoController.php';
@@ -19,6 +20,5 @@ $controller = new HomepageController();
 if(isset($_GET['page']) && $_GET['page'] === 'info') {
     $controller = new InfoController();
 }
-
 
 $controller->render($_GET, $_POST);

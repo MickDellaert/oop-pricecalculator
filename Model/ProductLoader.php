@@ -1,19 +1,23 @@
 <?php
-//we neet to extend the class ProductLoader to Dbconnection class in order to be able to access the connect method we have in the dbconnection class
 
-  class ProductLoader {
+  class ProductLoader
+  {
       public function getProducts()
       {
           $connection = new Dbconnection();
           $pdo = $connection->openConnection();
 
-          $handle = $pdo->prepare("SELECT * FROM product");
+          $handle = $pdo->prepare('SELECT id, name, price FROM product');
           $handle->execute();
           $products = $handle->fetchAll();
 
-          return $products;
-          
+          $productArr = [];
+          foreach ($products as $product) {
+              $product = new Product($product['id'],$product['name'],$product['price']);
+              array_push($productArr, $product );
+          }
+          return $productArr;
       }
-    }
+  }
   
 ?>

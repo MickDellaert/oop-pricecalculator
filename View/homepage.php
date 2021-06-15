@@ -3,15 +3,16 @@
 Anything complex should be calculated in the model -->
 <section>
 
-   <?php 
-        foreach ($products as $product) {
-            // echo $product->getName();
-            var_dump($product);
-        }
-    ?>
+<?php foreach ($products AS $product) {
+    echo $product->getName();
+};?>
+
+<!--    --><?php //echo $product->getID() ?>
+<!--    --><?php //echo $product->getPrice() ?>
 
     <p><a href="index.php?page=info">To info page</a></p>
 
     <p>Put your content here.</p>
 </section>
+
 <?php require 'includes/footer.php'?>
