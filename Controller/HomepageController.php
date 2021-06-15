@@ -11,6 +11,9 @@ class HomepageController
         $productLoader = new ProductLoader();
         $products = $productLoader->getProducts();
 
+        $customerLoader = new CustomerLoader();
+        $customers = $customerLoader->getCustomers();
+
 
         //you should not echo anything inside your controller - only assign vars here
         // then the view will actually display them.

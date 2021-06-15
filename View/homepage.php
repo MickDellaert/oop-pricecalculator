@@ -4,6 +4,19 @@ Anything complex should be calculated in the model -->
 <section>
 
 <form action="" method="post">
+  <label for="Customers">Choose a Customer</label>
+  
+  <select>
+    <?php foreach ($customers AS $customer) {
+        $firstname = $customer->getFirstname();
+        $lastname = $customer->getLastname();
+        $id = $customer->getId();
+        echo "<option value='{$id}'> {$firstname}  {$lastname} </option>";
+    };
+    ?>
+  </select>
+
+<form action="" method="post">
   <label for="Products">Choose a Product:</label>
   
   <select>
