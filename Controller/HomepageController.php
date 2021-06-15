@@ -9,6 +9,7 @@ class HomepageController
         //this is just example code, you can remove the line below
         //$user = new User('John Smith');
         $test = new ProductLoader();
+        $products=$test->getProducts();
         
 
         //you should not echo anything inside your controller - only assign vars here
