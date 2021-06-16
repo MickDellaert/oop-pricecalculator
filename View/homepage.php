@@ -30,6 +30,10 @@ Anything complex should be calculated in the model -->
     <input type="submit" name="submit" value="Choose options">
 
   </form>
+    <?php echo "<br>"; ?>
+    <?php echo $customerSelect->getFirstname(); ?>
+    <?php echo "<br><br>"; ?>
+    <?php echo $productSelect->getName(); ?>
 
     <p><a href="index.php?page=info">To info page</a></p>
 
