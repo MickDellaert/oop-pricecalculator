@@ -31,15 +31,6 @@ Anything complex should be calculated in the model -->
 
   </form>
 
-
-  <?php
-
-     var_dump($customerSelect);
-  //echo $customerSelect['firstname'];  
-
-
-  ?> 
-
     <p><a href="index.php?page=info">To info page</a></p>
 
     <p>Put your content here.</p>

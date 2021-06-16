@@ -6,8 +6,7 @@ class HomepageController
     //render function with both $_GET and $_POST vars available if it would be needed.
     public function render(array $GET, array $POST)
     {
-        //this is just example code, you can remove the line below
-        //$user = new User('John Smith');
+        
         $productLoader = new ProductLoader();
         $products = $productLoader->getProducts();
 
@@ -15,15 +14,14 @@ class HomepageController
         $customers = $customerLoader->getCustomers();
 
         $customerLoader = new CustomerLoader();
-        if(!empty($_POST['customerSelect'])){
+        if(!empty($_POST['customerSelect']) && (!empty($_POST['productSelect'])))
+        {
             
         $customerSelect = ($customerLoader->getCustomerById(intval($_POST['customerSelect']))) ;
-           
-        }
-       
-        
-        
 
+        $productSelect = ($productLoader->getProductById(intval($_POST['productSelect']))) ;
+           
+        }   
 
         //you should not echo anything inside your controller - only assign vars here
         // then the view will actually display them.

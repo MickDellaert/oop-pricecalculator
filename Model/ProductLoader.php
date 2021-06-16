@@ -2,7 +2,9 @@
 
   class ProductLoader
   {
-      public function getProducts()
+    private array $productArr=[];
+
+    public function __construct()
       {
           $connection = new Dbconnection();
           $pdo = $connection->openConnection();
@@ -11,13 +13,25 @@
           $handle->execute();
           $products = $handle->fetchAll();
 
-          $productArr = [];
           foreach ($products as $product) {
-              $product = new Product($product['id'],$product['name'],$product['price']);
-              array_push($productArr, $product );
+              array_push($this->productArr, new Product($product['id'],$product['name'],$product['price'])) ;
           }
-          return $productArr;
       }
+
+      public function getProducts():array
+      {
+          return $this->productArr;
+      }
+
+      public function getProductById(int $id){
+
+        foreach($this->productArr as $product) {
+            if($id == $product->getId()){
+                return $product;
+            } 
+            
+        }
+    }
   }
   
 ?>
