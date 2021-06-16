@@ -2,10 +2,10 @@
 
 class CustomerLoader
 {
-    private int $customerSelect;
+   // private int $customerSelect;
+    private array $customerArr=[];
 
-    public function getCustomers()
-    {
+    public function __construct() {
         $connection = new Dbconnection();
         $pdo = $connection->openConnection();
 
@@ -13,20 +13,25 @@ class CustomerLoader
         $handle->execute();
         $customers = $handle->fetchAll();
 
-        $customerArr = [];
+       // $customerArr = [];
         foreach ($customers as $customer) {
-            $customer = new Customer((int) $customer['id'], (string) $customer['firstname'], (string) $customer['lastname'], (int) $customer['group_id'], (int) $customer['fixed_discount'], (int) $customer['variable_discount']);
-            array_push($customerArr, $customer );
+            array_push($this->customerArr, new Customer((int) $customer['id'], (string) $customer['firstname'], (string) $customer['lastname'], (int) $customer['group_id'], (int) $customer['fixed_discount'], (int) $customer['variable_discount']));
+        
         }
-        return $customerArr;
+    
+    }
+    public function getCustomers():array
+    {   
+        return $this->customerArr;
     }
 
-    public function getCustomerById($id){
+    public function getCustomerById(int $id){
 
-        foreach($this->customer as $customer) {
+        foreach($this->customerArr as $customer) {
             if($id == $customer->getId()){
-                $this->customerSelect = $customer;
-            }
+                return $customer;
+            } 
+            
         }
     }
 }

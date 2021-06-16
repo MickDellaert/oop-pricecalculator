@@ -17,7 +17,7 @@ class HomepageController
         $customerLoader = new CustomerLoader();
         if(!empty($_POST['customerSelect'])){
             
-        $customerSelect = $customerLoader->getCustomerById($_POST['customerSelect']);
+        $customerSelect = ($customerLoader->getCustomerById(intval($_POST['customerSelect']))) ;
            
         }
        

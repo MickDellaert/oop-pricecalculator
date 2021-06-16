@@ -34,8 +34,8 @@ Anything complex should be calculated in the model -->
 
   <?php
 
-     
-  var_dump($customerSelect);  
+     var_dump($customerSelect);
+  //echo $customerSelect['firstname'];  
 
 
   ?> 
