@@ -14,6 +14,16 @@ class HomepageController
         $customerLoader = new CustomerLoader();
         $customers = $customerLoader->getCustomers();
 
+        $customerLoader = new CustomerLoader();
+        if(!empty($_POST['customerSelect'])){
+            
+        $customerSelect = $customerLoader->getCustomerById($_POST['customerSelect']);
+           
+        }
+       
+        
+        
+
 
         //you should not echo anything inside your controller - only assign vars here
         // then the view will actually display them.

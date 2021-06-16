@@ -2,6 +2,8 @@
 
 class CustomerLoader
 {
+    private int $customerSelect;
+
     public function getCustomers()
     {
         $connection = new Dbconnection();
@@ -17,6 +19,15 @@ class CustomerLoader
             array_push($customerArr, $customer );
         }
         return $customerArr;
+    }
+
+    public function getCustomerById($id){
+
+        foreach($this->customer as $customer) {
+            if($id == $customer->getId()){
+                $this->customerSelect = $customer;
+            }
+        }
     }
 }
 
