@@ -10,20 +10,18 @@
 - [x] Import data
 - [x] Make the different classes
 
-## Project steps 2
-- [ ] Show data on screen
-- [ ] Show data in dropdown list
-- [ ] Logic
-- [ ] Calculator
-
-## Project steps 3 - planning 15/06
+## Project steps 2 - planning 15/06
 - [x] Make class for productloader
 - [x] Make class for customerloader
 - [x] Create dropdown list
 - [x] Display information in the view
 
-- [ ] (Calculate the price)
-
+## Project steps 3 - planning 16/06
+- [ ] Get selected values from dropdown
+- [ ] Get groups and discounts from user
+- [ ] Make Customer group class (?)
+- [ ] Make Calculator class
+- [ ] Calculate the price
 
 
 # Title: PHP Price Calculator challenge
