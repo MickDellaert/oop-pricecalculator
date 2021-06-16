@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-class Customer_group
+class CustomerGroup
 {
     private int $id;
     private string $name;
@@ -29,7 +29,7 @@ class Customer_group
         return $this->name;
     }
 
-    public function getParent_id(): int
+    public function getParentId(): int
     {
         return $this->parent_id;
     }

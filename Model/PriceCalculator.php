@@ -16,6 +16,16 @@
             $this->variable_discount = $variable_discount;
     
         }
+
+        public function search(){
+            $customerSelect = 'testing';
+            $reporter = "John O'Hara";
+            $query = "SELECT INTO contents (type, reporter, description) 
+             VALUES(?, ?, 'whatever')";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$type, $reporter]);
+
+        }
     
     
 

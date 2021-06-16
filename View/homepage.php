@@ -30,10 +30,31 @@ Anything complex should be calculated in the model -->
     <input type="submit" name="submit" value="Choose options">
 
   </form>
-    <?php echo "<br>"; ?>
-    <?php echo $customerSelect->getFirstname(); ?>
-    <?php echo "<br><br>"; ?>
-    <?php echo $productSelect->getName(); ?>
+
+    <?php
+
+    echo "<br> first name:";
+    echo $customerSelect->getFirstname();
+    echo "<br><br> id:";
+    echo $customerSelect->getId();
+    echo "<br><br> group id:";
+    echo $customerSelect->getGroupId();
+    echo "<br><br> product:";
+    echo $productSelect->getName();
+    echo "<br><br> customer variable discount:";
+    echo $customerSelect->getVariableDiscount();
+    echo "<br><br> customer fixed discount:";
+    echo $customerSelect->getFixedDiscount();
+    echo "<br><br> group variable discount:";
+    echo $groupSelect->getVariableDiscount();
+    echo "<br><br> group fixed discount:";
+    echo $groupSelect->getFixedDiscount();
+
+    echo "<br><br> group id test:";
+    $test = $customerSelect->getGroupId() ;
+        var_dump($groupSelect->getVariableDiscount());
+
+    ?>
 
     <p><a href="index.php?page=info">To info page</a></p>
 

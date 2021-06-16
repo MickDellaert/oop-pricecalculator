@@ -13,6 +13,10 @@ class HomepageController
         $customerLoader = new CustomerLoader();
         $customers = $customerLoader->getCustomers();
 
+        $customerGroupLoader = new CustomerGroupLoader();
+        $customerGroups = $customerGroupLoader->getCustomerGroup();
+
+
         $customerLoader = new CustomerLoader();
         if(!empty($_POST['customerSelect']) && (!empty($_POST['productSelect'])))
         {
@@ -20,7 +24,10 @@ class HomepageController
         $customerSelect = ($customerLoader->getCustomerById(intval($_POST['customerSelect']))) ;
 
         $productSelect = ($productLoader->getProductById(intval($_POST['productSelect']))) ;
-           
+
+        $groupSelect = ($customerGroupLoader->getCustomerGroupById(intval($_POST['customerSelect']))) ;
+
+
         }   
 
         //you should not echo anything inside your controller - only assign vars here

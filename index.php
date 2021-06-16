@@ -2,11 +2,15 @@
 declare(strict_types=1);
 
 //include all your model files here
-require 'Model/Product.php';
-require 'Model/Customer.php';
 require 'Model/Dbconnection.php';
+require 'Model/Product.php';
 require 'Model/ProductLoader.php';
+require 'Model/Customer.php';
 require 'Model/CustomerLoader.php';
+require 'Model/CustomerGroup.php';
+require 'Model/CustomerGroupLoader.php';
+
+
 
 
 
