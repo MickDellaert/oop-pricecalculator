@@ -14,10 +14,9 @@ class HomepageController
         $customers = $customerLoader->getCustomers();
 
         $customerGroupLoader = new CustomerGroupLoader();
-        $customerGroups = $customerGroupLoader->getCustomerGroup();
-
-
+          
         $customerLoader = new CustomerLoader();
+
         if(!empty($_POST['customerSelect']) && (!empty($_POST['productSelect'])))
         {
             
@@ -29,6 +28,10 @@ class HomepageController
 
 
         }   
+
+       
+        $customerGroups = $customerGroupLoader->getCustomerGroup();
+        $groupFixed = $customerGroupLoader->getGroupFixedDiscount();
 
         //you should not echo anything inside your controller - only assign vars here
         // then the view will actually display them.

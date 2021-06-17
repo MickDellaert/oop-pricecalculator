@@ -9,9 +9,7 @@ require 'Model/Customer.php';
 require 'Model/CustomerLoader.php';
 require 'Model/CustomerGroup.php';
 require 'Model/CustomerGroupLoader.php';
-
-
-
+require 'Model/PriceCalculator.php';
 
 
 //include all your controllers here

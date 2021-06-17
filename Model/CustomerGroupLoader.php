@@ -6,6 +6,9 @@ class CustomerGroupLoader
     private array $customerGroupArr=[];
     private array $customerArr = [];
 
+    private array $variableDisc = [];
+    
+
     public function __construct() {
         $connection = new Dbconnection();
         $pdo = $connection->openConnection();
@@ -34,9 +37,26 @@ class CustomerGroupLoader
                     $this->getCustomerGroupById($customerGroup->getParentId());
                 }
                 return $this->customerArr;
+               
             }
 
         }
+    }
+    
+    public function getGroupFixedDiscount() {
+        $fixedDisc = 0;
+        foreach($this->customerArr as $customerGroup) {
+           $this->fixedDisc += $customerGroup->getFixedDiscount();
+        }
+        return $this->fixedDisc;
+    }
+    
+    public function getGroupVariableDiscount() {
+        foreach($this->customerArr as $customerGroup) {
+
+            $this->variableDisc[] = $customerGroup->getVariableDiscount();
+        }
+        return $this->variableDisc;
     }
 }
 
