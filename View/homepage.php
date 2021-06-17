@@ -38,21 +38,34 @@ Anything complex should be calculated in the model -->
     echo "<br><br> id:";
     echo $customerSelect->getId();
     echo "<br><br> group id:";
-    echo $customerSelect->getGroupId();
+    var_dump($customerSelect->getGroupId());
     echo "<br><br> product:";
     echo $productSelect->getName();
     echo "<br><br> customer variable discount:";
     echo $customerSelect->getVariableDiscount();
     echo "<br><br> customer fixed discount:";
     echo $customerSelect->getFixedDiscount();
-    echo "<br><br> group variable discount:";
-    echo $groupSelect->getVariableDiscount();
-    echo "<br><br> group fixed discount:";
-    echo $groupSelect->getFixedDiscount();
+    echo "<br><br>";
 
-    echo "<br><br> group id test:";
-    $test = $customerSelect->getGroupId() ;
-        var_dump($groupSelect->getVariableDiscount());
+//    var_dump($groupSelect);
+
+    foreach ($groupSelect as $group) {
+        var_dump($id = $group->getName());
+        var_dump($groupDiscount = $group->getVariableDiscount());
+    };
+
+
+
+    //    echo "<br><br> group variable discount:";
+//    echo $groupSelect->getVariableDiscount();
+//    echo "<br><br> group fixed discount:";
+//    echo $groupSelect->getFixedDiscount();
+
+//    var_dump($customerGroups);
+
+//    echo "<br><br> group id test:";
+//    echo $testgroup = $customerSelect->getGroupId() ;
+//       var_dump($testgroup->getvariableDiscount);
 
     ?>
 

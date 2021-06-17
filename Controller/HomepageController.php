@@ -25,7 +25,7 @@ class HomepageController
 
         $productSelect = ($productLoader->getProductById(intval($_POST['productSelect']))) ;
 
-        $groupSelect = ($customerGroupLoader->getCustomerGroupById(intval($_POST['customerSelect']))) ;
+        $groupSelect = ($customerGroupLoader->getCustomerGroupById($customerSelect->getGroupId())) ;
 
 
         }   
