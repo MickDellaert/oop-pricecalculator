@@ -56,6 +56,9 @@ Anything complex should be calculated in the model -->
 
     echo $groupFixed;
 
+    var_dump($customerFixed);
+
+
     //    echo "<br><br> group variable discount:";
 //    echo $groupSelect->getVariableDiscount();
 //    echo "<br><br> group fixed discount:";

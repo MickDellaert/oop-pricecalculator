@@ -17,21 +17,26 @@ class HomepageController
           
         $customerLoader = new CustomerLoader();
 
+
         if(!empty($_POST['customerSelect']) && (!empty($_POST['productSelect'])))
         {
-            
-        $customerSelect = ($customerLoader->getCustomerById(intval($_POST['customerSelect']))) ;
 
-        $productSelect = ($productLoader->getProductById(intval($_POST['productSelect']))) ;
+        $customerId = intval($_POST['customerSelect']);
+        $customerSelect = ($customerLoader->getCustomerById($customerId)) ;
+
+        $productId = intval($_POST['productSelect']);
+        $productSelect = ($productLoader->getProductById($productId)) ;
 
         $groupSelect = ($customerGroupLoader->getCustomerGroupById($customerSelect->getGroupId())) ;
 
-
-        }   
+        $priceCalculator = new PriceCalculator($productSelect, $customerSelect, $customerGroupLoader);
+        $fixedDiscountCompare = $priceCalculator->calculate();
+        }
 
        
         $customerGroups = $customerGroupLoader->getCustomerGroup();
         $groupFixed = $customerGroupLoader->getGroupFixedDiscount();
+
 
         //you should not echo anything inside your controller - only assign vars here
         // then the view will actually display them.

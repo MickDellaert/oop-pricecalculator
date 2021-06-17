@@ -7,8 +7,8 @@ class Dbconnection{
     {
          $dbhost = "localhost";
          $dbuser = "root";
-         $dbpass = "becode";
-         $db = "products";
+         $dbpass = "mickD1978";
+         $db = "import";
 
         $driverOptions = [
             PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'",
