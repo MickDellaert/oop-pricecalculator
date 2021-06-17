@@ -18,8 +18,13 @@
 
          $customerFixed = $this->customer->getFixedDiscount();
          $groupFixed = $this->customerGroupLoader->getGroupFixedDiscount();
+         $bestFixed = 0;
 
-         var_dump($customerFixed);
+         if($customerFixed > $groupFixed){
+            $bestFixed = $customerFixed;
+         } else $bestFixed = $groupFixed;
+
+         return $bestFixed;
 
             //return final price
         }

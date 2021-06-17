@@ -5,7 +5,7 @@ class CustomerGroupLoader
     // private int $customerSelect;
     private array $customerGroupArr=[];
     private array $customerArr = [];
-
+    private $fixedDisc = 0;
     private array $variableDisc = [];
     
 
@@ -44,7 +44,7 @@ class CustomerGroupLoader
     }
     
     public function getGroupFixedDiscount() {
-        $fixedDisc = 0;
+       //$fixedDisc = 0;
         foreach($this->customerArr as $customerGroup) {
            $this->fixedDisc += $customerGroup->getFixedDiscount();
         }
