@@ -3,10 +3,10 @@
 Anything complex should be calculated in the model -->
 <section>
 
-<form action="" method="post" name="InputForm">
-  <label for="Customers">Choose a Customer</label>
+<form class="form-control" action="" method="post" name="InputForm">
+  <label for="Customers"><b>Choose a Customer</b></label>
   
-  <select name="customerSelect">
+  <select class="form-select" name="customerSelect">
   <!-- Displays the customerers in the dropdown, accessed in the controller  $customers = $customerLoader->getCustomers(); -->
     <?php foreach ($customers AS $customer) {
         $firstname = $customer->getFirstname();
@@ -17,9 +17,9 @@ Anything complex should be calculated in the model -->
     ?>
   </select>
 
-  <label for="Products">Choose a Product:</label>
+  <label for="Products"><b>Choose a Product:</b></label>
   
-  <select name="productSelect">
+  <select class="form-select" name="productSelect">
   <!-- Displays the products accessed in the controller $products = $productLoader->getProducts(); -->
     <?php foreach ($products AS $product) {
         $name = $product->getName();
@@ -29,28 +29,28 @@ Anything complex should be calculated in the model -->
     ?>
   </select>
 
-    <input type="submit" name="submit" value="Choose options">
+<!--    <input type="submit" name="submit" value="Choose options">-->
+    <button type="submit" class="btn btn-primary " name="submit">Submit</button>
 
   </form>
-
+<div class="container content">
     <?php
-
 
 if(!empty($_POST['customerSelect']) && (!empty($_POST['productSelect'])))
 {
-    echo "<h3>Customer name: {$customerSelect->getFirstname()} {$customerSelect->getLastname()}</h3>";
-    echo "<h3>Id: {$customerSelect->getId()}</h3>";
-    echo "<h3>Product: {$productSelect->getName()}</h3>";
-    echo "<h3>Customer discounts: Fixed &#8364; {$customerSelect->getFixedDiscount()} & Variable {$customerSelect->getVariableDiscount()} &#37;</h3>";
-    echo "<h3>Group discounts: Fixed &#8364; {$customerGroupLoader->getGroupFixedDiscount()} & Variable {$customerGroupLoader->getGroupVariableDiscount()} &#37;</h3>";
-    echo "<h3>Price is: &#8364; {$productSelectPrice}</h3>";
-    echo "<h3>Discounted price is: &#8364; {$priceCalculator->calculate()}</h3>";
+    echo "<p><b>Customer name: </b>{$customerSelect->getFirstname()} {$customerSelect->getLastname()}</p>";
+    echo "<p><b>Customer id: </b>{$customerSelect->getId()}</p>";
+    echo "<p><b>Product: </b>{$productSelect->getName()}</p>";
+    echo "<p><b>Customer discounts: </b> Fixed &#8364; {$customerSelect->getFixedDiscount()} & Variable {$customerSelect->getVariableDiscount()} &#37;</p>";
+    echo "<p><b>Group discounts: </b>Fixed &#8364; {$customerGroupLoader->getGroupFixedDiscount()} & Variable {$customerGroupLoader->getGroupVariableDiscount()} &#37;</p>";
+    echo "<p><b>Price: </b>&#8364; {$productSelectPrice}</p>";
+    echo "<p><b>Discounted price: </b>&#8364; {$priceCalculator->calculate()}</p>";
 
   }
 
 
     ?>
-
+</div>
 </section>
 
 <?php require 'includes/footer.php'?>
