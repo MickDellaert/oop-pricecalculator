@@ -15,8 +15,7 @@
 - Structuring a project
 - Importing data from database
 - Apply basic OOP principles
-- Learning how to use an MVC model in a project
-  
+- Learning how to use an MVC model in a project 
 - Working in a small team
 - Dividing tasks
 - Communicating about tasks and approach
@@ -150,3 +149,5 @@ require 'view.php';
 ### Discussion for friday
 - Do you prefer procedural code or object oriented one? Why?
 - What is the use of an MVC? Do you prefer another way of structuring your code?
+
+![](image/pricecalculator.png)
