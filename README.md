@@ -1,3 +1,38 @@
+# Title: PHP Price Calculator challenge
+
+- Repository: `php-pricecalculator-challenge`
+- Type of Challenge: `Learning challenge`
+- Duration: `4 days`
+- Deployment strategy : `NA`
+- Team challenge : `pairs`
+
+## Project contributors:
+- Elisabeta Ghidiu
+- Mick Dellaert
+
+
+## What did we learn?
+- Structuring a project
+- Importing data from database
+- Apply basic OOP principles
+- Learning how to use an MVC model in a project
+  
+- Working in a small team
+- Dividing tasks
+- Communicating about tasks and approach
+
+
+## Struggles?
+- How to access methods of classes located in different files
+- Sometimes OOP worked more against structuring than in favor of it
+- Understanding how a controller works in MVC and how it communicates with the model and the view
+
+
+## The takeaway
+- Thinking more ahead about the structure instead of making the structure up as we go along
+- Make OOP work in favor of the project
+
+
 # TO DO:
 ## Preparation: 14/06 - morning
 - [x] Read up on MVC project structure
@@ -17,25 +52,21 @@
 - [x] Display information in the view
 
 ## Project steps 3 - planning 16/06
-- [ ] Get selected values from dropdown
-- [ ] Get groups and discounts from user
-- [ ] Make Customer group class (?)
-- [ ] Make Calculator class
-- [ ] Calculate the price
+- [x] Get selected values from dropdown
+- [x] Get groups and discounts from user
+- [x] Make Customer group class
 
+## Project steps 4 - planning 17/06
+- [x] Make Customer group loader class
+- [x] Make Calculator class
+- [x] Calculate the price
 
-# Title: PHP Price Calculator challenge
+## Project steps 4 - planning 18/06 
+- [x] Calculate the price continued
+- [x] Allround fixes
+- [x] Added basic styling
+- [x] Added comments in code
 
-- Repository: `php-pricecalculator-challenge`
-- Type of Challenge: `Learning challenge`
-- Duration: `4 days`
-- Deployment strategy : `NA`
-- Team challenge : `pairs`
-
-## Learning objectives
-- Apply basic OOP principles
-- Import data with a database
-- Learn to use an MVC
 
 ## The Mission
 Today you are going to combine your new awesome OOP powers with a database.

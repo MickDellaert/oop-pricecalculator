@@ -2,7 +2,6 @@
 
 class CustomerGroupLoader
 {
-    // private int $customerSelect;
     private array $customerGroupArr=[];
     private array $customerArr = [];
     private $fixedDisc = 0;
@@ -27,12 +26,14 @@ class CustomerGroupLoader
         return $this->customerGroupArr;
     }
 
-
+    //This method gets the group id from the customer chosen by $customerSelect->getGroupId in HomepageController as argument to access the customer_group table
     public function getCustomerGroupById(int $id){
 
         foreach($this->customerGroupArr as $customerGroup) {
+
             if($id == $customerGroup->getId()){
                 array_push($this->customerArr, $customerGroup);
+
                 if ($customerGroup->getParentId()){
                     $this->getCustomerGroupById($customerGroup->getParentId());
                 }
@@ -44,7 +45,7 @@ class CustomerGroupLoader
     }
     
     public function getGroupFixedDiscount() {
-        $this->fixedDisc = 0;
+        $this->fixedDisc = 0; //Reset the method when being called a second time when outputting to the view
         foreach($this->customerArr as $customerGroup) {
            $this->fixedDisc += $customerGroup->getFixedDiscount();
         }
@@ -54,6 +55,7 @@ class CustomerGroupLoader
     public function getGroupVariableDiscount() {
         foreach($this->customerArr as $customerGroup) {
 
+            //Generating the array in a different way as using array_push
             $this->variableDisc[] = $customerGroup->getVariableDiscount();
         }
         return max($this->variableDisc);

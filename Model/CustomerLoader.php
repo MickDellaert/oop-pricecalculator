@@ -2,7 +2,6 @@
 
 class CustomerLoader
 {
-   // private int $customerSelect;
     private array $customerArr=[];
 
     public function __construct() {
@@ -13,7 +12,6 @@ class CustomerLoader
         $handle->execute();
         $customers = $handle->fetchAll();
 
-       // $customerArr = [];
         foreach ($customers as $customer) {
             array_push($this->customerArr, new Customer((int) $customer['id'], (string) $customer['firstname'], (string) $customer['lastname'], (int) $customer['group_id'], (int) $customer['fixed_discount'], (int) $customer['variable_discount']));
         
@@ -25,6 +23,7 @@ class CustomerLoader
         return $this->customerArr;
     }
 
+    //This method gets the selected id from the customer chosen as argument when called
     public function getCustomerById(int $id){
 
         foreach($this->customerArr as $customer) {

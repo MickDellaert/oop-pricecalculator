@@ -23,6 +23,7 @@
           return $this->productArr;
       }
 
+      //This method gets the selected id from the product chosen as argument when called
       public function getProductById(int $id){
 
         foreach($this->productArr as $product) {
