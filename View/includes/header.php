@@ -14,5 +14,6 @@
 <body>
 <div class="container">
     <header>
-        <h1>Price Calculator</h1>
+        <h1>TropiCalc</h1>
+        <h2>Stay cool with our hot discounts</h2>
     </header>

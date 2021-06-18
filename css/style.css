@@ -1,9 +1,19 @@
+body {
+    background-color: #c4ddec;
+}
+
 h1 {
+    font-size: 70px;
     margin-top: 40px;
     margin-bottom: 20px;
 }
 
-form {
+h2 {
+    margin-bottom: 30px;
+}
+
+.form-control {
+    background-color: #ddf2ff;
     margin-top: 10px;
     max-width: 400px;
 }
