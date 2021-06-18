@@ -24,8 +24,37 @@
             $bestFixed = $customerFixed;
          } else $bestFixed = $groupFixed;
 
-         return $bestFixed;
+         $customerVariable = $this->customer->getVariableDiscount();
+         $groupVariable = $this->customerGroupLoader->getGroupVariableDiscount();
+         $bestVariable = 0;
 
+         if($customerVariable > $groupVariable){
+            $bestVariable = $customerVariable;
+         } else $bestVariable = $groupVariable;
+         //var_dump($bestVariable);
+
+         $productPrice = $this->product->getPrice();
+         //var_dump($productPrice);
+
+         $productPrice1 = $productPrice/100-$bestFixed;
+         //var_dump($productPrice1);
+
+        $productPrice2 = ($productPrice-(($bestVariable/100)*$productPrice))/100;
+         //var_dump($productPrice2/100);
+             
+
+         if($productPrice1 > $productPrice2){
+            $productPrice = $productPrice2;
+         } else $productPrice = $productPrice1;
+
+
+         if ($productPrice1 <= 0 || $productPrice2 <= 0) {
+            $productPrice = 0;
+         }
+
+         return $productPrice;
+
+      
             //return final price
         }
 

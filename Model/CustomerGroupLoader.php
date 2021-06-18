@@ -56,7 +56,7 @@ class CustomerGroupLoader
 
             $this->variableDisc[] = $customerGroup->getVariableDiscount();
         }
-        return $this->variableDisc;
+        return max($this->variableDisc);
     }
 }
 
