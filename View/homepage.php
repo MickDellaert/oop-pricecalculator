@@ -48,22 +48,11 @@ if(!empty($_POST['customerSelect']) && (!empty($_POST['productSelect'])))
   }
 
 
-    //    echo "<br><br> group variable discount:";
-//    echo $groupSelect->getVariableDiscount();
-//    echo "<br><br> group fixed discount:";
-//    echo $groupSelect->getFixedDiscount();
-
-//    var_dump($customerGroups);
-
-//    echo "<br><br> group id test:";
-//    echo $testgroup = $customerSelect->getGroupId() ;
-//       var_dump($testgroup->getvariableDiscount);
-
     ?>
 
-    <p><a href="index.php?page=info">To info page</a></p>
+    <!-- <p><a href="index.php?page=info">To info page</a></p>
 
-    <p>Put your content here.</p>
+    <p>Put your content here.</p> -->
 </section>
 
 <?php require 'includes/footer.php'?>
