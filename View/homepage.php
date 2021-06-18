@@ -32,20 +32,21 @@
 
         </form>
 
-        <div class="container content">
             <?php
 
             if (!empty($_POST['customerSelect']) && (!empty($_POST['productSelect']))) {
-                echo "<p><b>Customer name: </b>{$customerSelect->getFirstname()} {$customerSelect->getLastname()}</p>";
-                echo "<p><b>Customer id: </b>{$customerSelect->getId()}</p>";
-                echo "<p><b>Product: </b>{$productSelect->getName()}</p>";
-                echo "<p><b>Customer discounts: </b> Fixed &#8364; {$customerSelect->getFixedDiscount()} & Variable {$customerSelect->getVariableDiscount()} &#37;</p>";
-                echo "<p><b>Group discounts: </b>Fixed &#8364; {$customerGroupLoader->getGroupFixedDiscount()} & Variable {$customerGroupLoader->getGroupVariableDiscount()} &#37;</p>";
-                echo "<p><b>Price: </b>&#8364; {$productSelectPrice}</p>";
-                echo "<p><b>Discounted price: </b>&#8364; {$priceCalculator->calculate()}</p>";
+                echo "<table class='table'>";
+                echo "<tr><td><b>Customer name: </b>{$customerSelect->getFirstname()} {$customerSelect->getLastname()}<td></tr>";
+                echo "<tr><td><b>Customer id: </b>{$customerSelect->getId()}<td></tr>";
+                echo "<tr><td><b>Product: </b>{$productSelect->getName()}<td></tr>";
+                echo "<tr><td><b>Customer discounts: </b> Fixed &#8364; {$customerSelect->getFixedDiscount()} & Variable {$customerSelect->getVariableDiscount()} &#37;<td></tr>";
+                echo "<tr><td><b>Group discounts: </b>Fixed &#8364; {$customerGroupLoader->getGroupFixedDiscount()} & Variable {$customerGroupLoader->getGroupVariableDiscount()} &#37;<td></tr>";
+                echo "<tr><td><b>Price: </b>&#8364; {$productSelectPrice}<td></tr>";
+                echo "<tr><td><b>Discounted price: </b>&#8364; {$priceCalculator->calculate()}<td></tr>";
+                echo "</table>";
+
             }
             ?>
-        </div>
     </section>
 
 <?php require 'includes/footer.php' ?>

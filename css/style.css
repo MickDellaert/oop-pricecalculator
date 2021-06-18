@@ -1,20 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&display=swap');
+
 body {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
     background-color: #c4ddec;
 }
 
 h1 {
-    font-size: 70px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 75px;
     margin-top: 40px;
     margin-bottom: 20px;
 }
 
 h2 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
     margin-bottom: 30px;
 }
 
 .form-control {
     background-color: #ddf2ff;
     margin-top: 10px;
+    margin-bottom: 20px;
     max-width: 450px;
 }
 
@@ -31,7 +40,8 @@ button {
     margin-bottom: 10px;
 }
 
-.content {
+.table {
     margin-top: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
+    max-width: 450px;
 }
