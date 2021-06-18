@@ -44,7 +44,7 @@ class CustomerGroupLoader
     }
     
     public function getGroupFixedDiscount() {
-       //$fixedDisc = 0;
+        $this->fixedDisc = 0;
         foreach($this->customerArr as $customerGroup) {
            $this->fixedDisc += $customerGroup->getFixedDiscount();
         }

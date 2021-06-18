@@ -7,6 +7,7 @@ Anything complex should be calculated in the model -->
   <label for="Customers">Choose a Customer</label>
   
   <select name="customerSelect">
+  <!-- Displays the customerers in the dropdown, accessed in the controller  $customers = $customerLoader->getCustomers(); -->
     <?php foreach ($customers AS $customer) {
         $firstname = $customer->getFirstname();
         $lastname = $customer->getLastname();
@@ -19,6 +20,7 @@ Anything complex should be calculated in the model -->
   <label for="Products">Choose a Product:</label>
   
   <select name="productSelect">
+  <!-- Displays the products accessed in the controller $products = $productLoader->getProducts(); -->
     <?php foreach ($products AS $product) {
         $name = $product->getName();
         $id = $product->getId();
@@ -40,19 +42,15 @@ if(!empty($_POST['customerSelect']) && (!empty($_POST['productSelect'])))
     echo "<h3>Id: {$customerSelect->getId()}</h3>";
     echo "<h3>Product: {$productSelect->getName()}</h3>";
     echo "<h3>Customer discounts: Fixed &#8364; {$customerSelect->getFixedDiscount()} & Variable {$customerSelect->getVariableDiscount()} &#37;</h3>";
-    echo "<h3>Group discounts: Fixed &#8364; {$groupFixed} & Variable {$groupVariable} &#37;</h3>";
-   
-
-    echo "<h3>The discounted price is: &#8364; {$fixedDiscountCompare}</h3>";
+    echo "<h3>Group discounts: Fixed &#8364; {$customerGroupLoader->getGroupFixedDiscount()} & Variable {$customerGroupLoader->getGroupVariableDiscount()} &#37;</h3>";
+    echo "<h3>Price is: &#8364; {$productSelectPrice}</h3>";
+    echo "<h3>Discounted price is: &#8364; {$priceCalculator->calculate()}</h3>";
 
   }
 
 
     ?>
 
-    <!-- <p><a href="index.php?page=info">To info page</a></p>
-
-    <p>Put your content here.</p> -->
 </section>
 
 <?php require 'includes/footer.php'?>

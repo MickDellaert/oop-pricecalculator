@@ -4,7 +4,7 @@
  
     class PriceCalculator
     {
-        private Product $product;
+        private Product $product; // we define the class properties, which in this case are of type Object
         private Customer $customer;
         private CustomerGroupLoader $customerGroupLoader;
 
@@ -16,7 +16,7 @@
 
         public function calculate(){
 
-         $customerFixed = $this->customer->getFixedDiscount();
+         $customerFixed = $this->customer->getFixedDiscount(); // we access the methods we defined in a diffrent class (customer) with this and double arrow this->customer-> (any available method)
          $groupFixed = $this->customerGroupLoader->getGroupFixedDiscount();
          $bestFixed = 0;
 
