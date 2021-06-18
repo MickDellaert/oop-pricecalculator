@@ -36,6 +36,7 @@ class HomepageController
        
         $customerGroups = $customerGroupLoader->getCustomerGroup();
         $groupFixed = $customerGroupLoader->getGroupFixedDiscount();
+        $groupVariable = $customerGroupLoader->getGroupVariableDiscount();
 
 
         //you should not echo anything inside your controller - only assign vars here

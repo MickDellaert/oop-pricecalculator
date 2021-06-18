@@ -52,7 +52,7 @@
             $productPrice = 0;
          }
 
-         return $productPrice;
+         return round($productPrice, 2);
 
       
             //return final price

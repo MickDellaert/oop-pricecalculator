@@ -33,32 +33,19 @@ Anything complex should be calculated in the model -->
 
     <?php
 
-    echo "<br> first name:";
-    echo $customerSelect->getFirstname();
-    echo "<br><br> id:";
-    echo $customerSelect->getId();
-    echo "<br><br> group id:";
-    var_dump($customerSelect->getGroupId());
-    echo "<br><br> product:";
-    echo $productSelect->getName();
-    echo "<br><br> customer variable discount:";
-    echo $customerSelect->getVariableDiscount();
-    echo "<br><br> customer fixed discount:";
-    echo $customerSelect->getFixedDiscount();
-    echo "<br><br>";
 
-//    var_dump($groupSelect);
+if(!empty($_POST['customerSelect']) && (!empty($_POST['productSelect'])))
+{
+    echo "<h3>Customer name: {$customerSelect->getFirstname()} {$customerSelect->getLastname()}</h3>";
+    echo "<h3>Id: {$customerSelect->getId()}</h3>";
+    echo "<h3>Product: {$productSelect->getName()}</h3>";
+    echo "<h3>Customer discounts: Fixed &#8364; {$customerSelect->getFixedDiscount()} & Variable {$customerSelect->getVariableDiscount()} &#37;</h3>";
+    echo "<h3>Group discounts: Fixed &#8364; {$groupFixed} & Variable {$groupVariable} &#37;</h3>";
+   
 
-    foreach ($groupSelect as $group) {
-        var_dump($id = $group->getName());
-        var_dump($groupDiscount = $group->getVariableDiscount());
-    };
+    echo "<h3>The discounted price is: &#8364; {$fixedDiscountCompare}</h3>";
 
-    echo $groupFixed;
-    echo "<br><br>";
-    echo "this is the fixed price from price calculator: {$fixedDiscountCompare}";
-
-
+  }
 
 
     //    echo "<br><br> group variable discount:";
