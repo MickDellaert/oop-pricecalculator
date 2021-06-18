@@ -5,7 +5,7 @@
 
         <form class="form-control" action="" method="post" name="InputForm">
 
-            <label for="Customers"><b>Choose a Customer</b></label>
+            <label for="Customers"><b>Choose a Customer:</b></label>
             <select class="form-select" name="customerSelect">
                 <!-- Displays the customerers in the dropdown, accessed in the controller  $customers = $customerLoader->getCustomers(); -->
                 <?php foreach ($customers as $customer) {
